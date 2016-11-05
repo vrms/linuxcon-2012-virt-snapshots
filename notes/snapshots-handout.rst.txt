@@ -257,6 +257,14 @@ tricky, as it involves slightly complicated process of dealing with additional
 snapshot files - whether to merge 'base' images into 'top' or to merge other way
 round ('top' into 'base').
 
+You also can revert to en external snapshot by simply editing the domains .xml so 
+it points points to the snapshots image file representing the status you want to 
+revert to.
+
+   # virsh edit [domain]
+  
+... and then manually deleting the snapshots newer then that
+
 That said, there are a couple of ways to deal with external snapshot files by
 merging them to reduce the external snapshot disk image chain by performing
 either a **blockpull** or **blockcommit** (more on this below). 
